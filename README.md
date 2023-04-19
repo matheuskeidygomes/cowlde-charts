@@ -17,7 +17,7 @@ Run into application root directory:
 
 ```bash
 
-$ npm i owl-charts
+$ npm i cowlde-charts
 
 ```
 
