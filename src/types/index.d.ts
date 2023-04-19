@@ -57,3 +57,20 @@ export type AreaElement = {
   color?: string;
   fill?: string;
 };
+
+export type DefaultValues = {
+  type: CurveType;
+  width: string | number;
+  height: number | string;
+  color: string;
+  lineStroke: string;
+  gridStroke: string;
+  filterColor: string;
+  stackId: string;
+  brushFilter: string;
+  brushHeight: number;
+  opacity: number;
+  barSize: number;
+  outerRadius: number;
+  innerRadius: number;
+};

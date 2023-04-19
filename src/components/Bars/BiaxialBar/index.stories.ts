@@ -45,6 +45,7 @@ export const Example: Story = {
     height: 300,
     dataSource,
     dashGrid: "3 3",
+    barSize: 20,
     leftAxisColor: "#8884d8",
     rightAxisColor: "#82ca9d",
     onClick: (details: any) => console.log(details),

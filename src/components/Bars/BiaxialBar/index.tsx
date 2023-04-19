@@ -12,8 +12,15 @@ import {
 import defaultValues from "../../../common/default";
 
 export default function BiaxialBarChart(props: any) {
-  const { width, height, dataSource, dashGrid, leftAxisColor, rightAxisColor } =
-    props;
+  const {
+    width,
+    height,
+    dataSource,
+    dashGrid,
+    leftAxisColor,
+    rightAxisColor,
+    barSize,
+  } = props;
 
   function generateBars() {
     const bars = dataSource.bars.map((bar, index) => {
@@ -22,6 +29,7 @@ export default function BiaxialBarChart(props: any) {
         <Bar
           key={index}
           yAxisId={axisId}
+          barSize={barSize ? barSize : defaultValues.barSize}
           dataKey={title}
           fill={color ? color : defaultValues.color}
         />

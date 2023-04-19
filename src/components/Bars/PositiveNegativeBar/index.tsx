@@ -13,7 +13,7 @@ import {
 import defaultValues from "../../../common/default";
 
 export default function PositiveNegativeBarChart(props: any) {
-  const { width, height, dataSource, dashGrid } = props;
+  const { width, height, dataSource, dashGrid, barSize } = props;
 
   function generateBars() {
     const bars = dataSource.bars.map((bar: any, index: number) => {
@@ -21,6 +21,7 @@ export default function PositiveNegativeBarChart(props: any) {
       return (
         <Bar
           key={index}
+          barSize={barSize ? barSize : defaultValues.barSize}
           dataKey={title}
           fill={color ? color : defaultValues.color}
         />

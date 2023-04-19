@@ -67,6 +67,7 @@ export const Example: Story = {
     brushFilter: "title",
     brushColor: "#8884d8",
     brushHeight: 30,
+    barSize: 20,
     onClick: (details: any) => console.log(details),
   },
 };

@@ -22,6 +22,7 @@ export default function BrushBarChart(props: any) {
     brushFilter,
     brushColor,
     brushHeight,
+    barSize,
   } = props;
 
   function generateBars() {
@@ -31,6 +32,7 @@ export default function BrushBarChart(props: any) {
         <Bar
           key={index}
           dataKey={title}
+          barSize={barSize ? barSize : defaultValues.barSize}
           fill={color ? color : defaultValues.color}
         />
       );

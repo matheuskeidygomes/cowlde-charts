@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 const dataSource = {
   areas: [{ title: "amt", color: "#ffc658", type: "monotone", opacity: 0.7 }],
   lines: [{ title: "uv", color: "#8884d8", type: "monotone" }],
-  bars: [{ title: "pv", color: "#82ca9d", size: 25 }],
+  bars: [{ title: "pv", color: "#82ca9d" }],
   data: [
     {
       title: "Page A",
@@ -48,6 +48,7 @@ export const Example: Story = {
     height: 300,
     dataSource,
     dashGrid: "3 3",
+    barSize: 20,
     onClick: (details: any) => console.log(details),
   },
 };

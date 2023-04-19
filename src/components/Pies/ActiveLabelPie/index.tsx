@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
+import defaultValues from "../../../common/default";
 
-export default function CustomActiveShapePieChart(props: any) {
+export default function ActiveLabelPieChart(props: any) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { width, height, data } = props;
+  const { width, height, dataSource, outerRadius, innerRadius } = props;
 
   function onPieEnter(_: any, index: any) {
     setActiveIndex(index);
@@ -37,7 +38,7 @@ export default function CustomActiveShapePieChart(props: any) {
     return (
       <>
         <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-          {payload.name}
+          {payload.title}
         </text>
         <Sector
           cx={cx}
@@ -68,7 +69,7 @@ export default function CustomActiveShapePieChart(props: any) {
           y={ey}
           textAnchor={textAnchor}
           fill="#333"
-        >{`PV ${value}`}</text>
+        >{`${value}`}</text>
         <text
           x={ex + (cos >= 0 ? 1 : -1) * 12}
           y={ey}
@@ -83,16 +84,19 @@ export default function CustomActiveShapePieChart(props: any) {
   }
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <PieChart width={width} height={height}>
+    <ResponsiveContainer
+      width={width ? width : defaultValues.width}
+      height={height ? height : defaultValues.height}
+    >
+      <PieChart>
         <Pie
           activeIndex={activeIndex}
           activeShape={renderActiveShape}
-          data={data}
+          data={dataSource.data}
           cx="50%"
           cy="50%"
-          innerRadius={60}
-          outerRadius={80}
+          innerRadius={innerRadius ? innerRadius : defaultValues.innerRadius}
+          outerRadius={outerRadius ? outerRadius : defaultValues.outerRadius}
           fill="#8884d8"
           dataKey="value"
           onMouseEnter={onPieEnter}

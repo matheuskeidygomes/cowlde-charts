@@ -50,6 +50,7 @@ export const Example: Story = {
     height: 300,
     dataSource,
     dashGrid: "3 3",
+    barSize: 20,
     onClick: (details: any) => console.log(details),
   },
 };

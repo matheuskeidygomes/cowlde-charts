@@ -12,7 +12,7 @@ import {
 import defaultValues from "../../../common/default";
 
 export default function StackedBarChart(props: any) {
-  const { width, height, dataSource, dashGrid } = props;
+  const { width, height, dataSource, dashGrid, barSize } = props;
 
   function generateBars() {
     const bars = dataSource.bars.map((bar: any, index: number) => {
@@ -21,6 +21,7 @@ export default function StackedBarChart(props: any) {
         <Bar
           key={index}
           dataKey={title}
+          barSize={barSize ? barSize : defaultValues.barSize}
           fill={color ? color : defaultValues.color}
           stackId={stackId ? stackId : defaultValues.stackId}
         />

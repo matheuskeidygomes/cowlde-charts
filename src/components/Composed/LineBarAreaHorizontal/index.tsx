@@ -14,15 +14,15 @@ import {
 import defaultValues from "../../../common/default";
 
 export default function LineBarAreaHorizontalChart(props: any) {
-  const { width, height, dataSource, dashGrid } = props;
+  const { width, height, dataSource, dashGrid, barSize } = props;
 
   function generateChartElements() {
     const bars = dataSource.bars.map((bar: any) => {
-      const { title, color, size } = bar;
+      const { title, color } = bar;
       return (
         <Bar
           key={title}
-          barSize={size ? size : defaultValues.barSize}
+          barSize={barSize ? barSize : defaultValues.barSize}
           dataKey={title}
           fill={color ? color : defaultValues.color}
         />

@@ -1,11 +1,10 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import defaultValues from "../../../common/default";
 
 export default function CustomLabelPieChart(props: any) {
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+  const { width, height, dataSource, outerRadius } = props;
   const RADIAN = Math.PI / 180;
-  const { width, height, data } = props;
-
   const renderCustomizedLabel = ({
     cx,
     cy,
@@ -30,22 +29,36 @@ export default function CustomLabelPieChart(props: any) {
     );
   };
 
+  function generateCells() {
+    const cells = dataSource.cells.map((cell: any, index: number) => {
+      const { color } = cell;
+      return (
+        <Cell
+          key={`cell-${index}`}
+          fill={color ? color : defaultValues.color}
+        />
+      );
+    });
+    return cells;
+  }
+
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <PieChart width={width} height={height}>
+    <ResponsiveContainer
+      width={width ? width : defaultValues.width}
+      height={height ? height : defaultValues.height}
+    >
+      <PieChart>
         <Pie
-          data={data}
+          dataKey="value"
+          data={dataSource.data}
           cx="50%"
           cy="50%"
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={80}
+          outerRadius={outerRadius ? outerRadius : defaultValues.outerRadius}
           fill="#8884d8"
-          dataKey="value"
         >
-          {data.map((_, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
+          {generateCells()}
         </Pie>
       </PieChart>
     </ResponsiveContainer>
