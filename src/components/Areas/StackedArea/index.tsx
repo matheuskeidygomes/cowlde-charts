@@ -9,12 +9,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import defaultValues from "../../../common/default";
+import { ChartElement, AreaElement } from "../../../types";
 
-export default function StackedAreaChart(props: any) {
+export default function StackedAreaChart(props: ChartElement) {
   const { width, height, dataSource, dashGrid } = props;
 
   function generateAreas() {
-    const areas = dataSource.areas.map((area: any, index: number) => {
+    const areas = dataSource.areas.map((area: AreaElement, index: number) => {
       const { title, color, stackId, type, opacity } = area;
       return (
         <Area

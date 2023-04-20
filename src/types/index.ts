@@ -1,11 +1,36 @@
 import { CurveType } from "recharts/types/shape/Curve";
 
+export type DefaultValues = {
+  type: CurveType;
+  width: string | number;
+  height: number | string;
+  color: string;
+  lineStroke: string;
+  gridStroke: string;
+  filterColor: string;
+  stackId: string;
+  brushFilter: string;
+  brushHeight: number;
+  opacity: number;
+  barSize: number;
+  outerRadius: number;
+  innerRadius: number;
+};
+
 export type ChartElement = {
+  dataSource: DataSourceElement;
   width?: string | number;
   height?: string | number;
   dashGrid?: string;
+  barSize?: number;
+  leftAxisColor?: string;
+  rightAxisColor?: string;
+  brushFilter?: string;
+  brushColor?: string;
+  brushHeight?: number;
+  outerRadius?: number;
+  innerRadius?: number;
   onClick?: (details: any) => void;
-  dataSource: DataSourceElement;
 };
 
 export type DataSourceElement = {
@@ -37,40 +62,25 @@ export type LineElement = {
 export type BarElement = {
   title: string;
   color?: string;
-  fill?: string;
+  axisId?: string;
+  stackId?: string;
 };
 
 export type PieElement = {
-  title: string;
   color?: string;
-  fill?: string;
 };
 
 export type ComposedBarElement = {
   title: string;
   color?: string;
-  fill?: string;
+  type?: CurveType;
+  opacity?: number;
 };
 
 export type AreaElement = {
   title: string;
   color?: string;
-  fill?: string;
-};
-
-export type DefaultValues = {
-  type: CurveType;
-  width: string | number;
-  height: number | string;
-  color: string;
-  lineStroke: string;
-  gridStroke: string;
-  filterColor: string;
-  stackId: string;
-  brushFilter: string;
-  brushHeight: number;
-  opacity: number;
-  barSize: number;
-  outerRadius: number;
-  innerRadius: number;
+  type?: CurveType;
+  opacity?: number;
+  stackId?: string;
 };

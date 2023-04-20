@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
 import defaultValues from "../../../common/default";
+import { ChartElement } from "../../../types";
 
-export default function ActiveLabelPieChart(props: any) {
+export default function ActiveLabelPieChart(props: ChartElement) {
   const [activeIndex, setActiveIndex] = useState(0);
   const { width, height, dataSource, outerRadius, innerRadius } = props;
 
-  function onPieEnter(_: any, index: any) {
+  function onPieEnter(_: any, index: number) {
     setActiveIndex(index);
   }
 

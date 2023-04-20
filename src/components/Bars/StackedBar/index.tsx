@@ -10,12 +10,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import defaultValues from "../../../common/default";
+import { BarElement, ChartElement } from "../../../types";
 
-export default function StackedBarChart(props: any) {
+export default function StackedBarChart(props: ChartElement) {
   const { width, height, dataSource, dashGrid, barSize } = props;
 
   function generateBars() {
-    const bars = dataSource.bars.map((bar: any, index: number) => {
+    const bars = dataSource.bars.map((bar: BarElement, index: number) => {
       const { title, color, stackId } = bar;
       return (
         <Bar

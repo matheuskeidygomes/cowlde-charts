@@ -10,8 +10,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import defaultValues from "../../../common/default";
+import { ChartElement, BarElement } from "../../../types";
 
-export default function BiaxialBarChart(props: any) {
+export default function BiaxialBarChart(props: ChartElement) {
   const {
     width,
     height,
@@ -23,7 +24,7 @@ export default function BiaxialBarChart(props: any) {
   } = props;
 
   function generateBars() {
-    const bars = dataSource.bars.map((bar, index) => {
+    const bars = dataSource.bars.map((bar: BarElement, index: number) => {
       const { title, color, axisId } = bar;
       return (
         <Bar

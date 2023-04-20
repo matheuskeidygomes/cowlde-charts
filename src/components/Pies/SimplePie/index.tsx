@@ -1,8 +1,9 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import defaultValues from "../../../common/default";
+import { ChartElement, PieElement } from "../../../types";
 
-export default function CustomLabelPieChart(props: any) {
+export default function CustomLabelPieChart(props: ChartElement) {
   const { width, height, dataSource, outerRadius } = props;
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
@@ -30,7 +31,7 @@ export default function CustomLabelPieChart(props: any) {
   };
 
   function generateCells() {
-    const cells = dataSource.cells.map((cell: any, index: number) => {
+    const cells = dataSource.cells.map((cell: PieElement, index: number) => {
       const { color } = cell;
       return (
         <Cell

@@ -10,12 +10,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import defaultValues from "../../../common/default";
+import { ChartElement, BarElement } from "../../../types";
 
-export default function SimpleBarChart(props: any) {
+export default function SimpleBarChart(props: ChartElement) {
   const { width, height, dataSource, dashGrid, barSize } = props;
 
   function generateBars() {
-    const bars = dataSource.bars.map((bar: any, index: number) => {
+    const bars = dataSource.bars.map((bar: BarElement, index: number) => {
       const { title, color } = bar;
       return (
         <Bar

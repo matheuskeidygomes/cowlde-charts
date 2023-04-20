@@ -9,12 +9,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import defaultValues from "../../../common/default";
+import { ChartElement, AreaElement } from "../../../types";
 
-export default function SimpleAreaChart(props: any) {
+export default function SimpleAreaChart(props: ChartElement) {
   const { width, height, dataSource, dashGrid } = props;
 
   function generateAreas() {
-    const areas = dataSource.areas.map((area: any, index: number) => {
+    const areas = dataSource.areas.map((area: AreaElement, index: number) => {
       const { title, color, opacity, type } = area;
       return (
         <Area
@@ -31,23 +32,25 @@ export default function SimpleAreaChart(props: any) {
   }
 
   function generateGradients() {
-    const gradients = dataSource.areas.map((area: any, index: number) => {
-      const { title, color, opacity } = area;
-      return (
-        <linearGradient key={index} id={title} x1="0" y1="0" x2="0" y2="1">
-          <stop
-            offset="5%"
-            stopColor={color ? color : defaultValues.color}
-            stopOpacity={opacity ? opacity : defaultValues.opacity}
-          />
-          <stop
-            offset="95%"
-            stopColor={color ? color : defaultValues.color}
-            stopOpacity={0}
-          />
-        </linearGradient>
-      );
-    });
+    const gradients = dataSource.areas.map(
+      (area: AreaElement, index: number) => {
+        const { title, color, opacity } = area;
+        return (
+          <linearGradient key={index} id={title} x1="0" y1="0" x2="0" y2="1">
+            <stop
+              offset="5%"
+              stopColor={color ? color : defaultValues.color}
+              stopOpacity={opacity ? opacity : defaultValues.opacity}
+            />
+            <stop
+              offset="95%"
+              stopColor={color ? color : defaultValues.color}
+              stopOpacity={0}
+            />
+          </linearGradient>
+        );
+      }
+    );
     return gradients;
   }
 

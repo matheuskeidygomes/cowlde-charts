@@ -12,8 +12,9 @@ import {
   Brush,
 } from "recharts";
 import defaultValues from "../../../common/default";
+import { ChartElement, BarElement } from "../../../types";
 
-export default function BrushBarChart(props: any) {
+export default function BrushBarChart(props: ChartElement) {
   const {
     width,
     height,
@@ -26,7 +27,7 @@ export default function BrushBarChart(props: any) {
   } = props;
 
   function generateBars() {
-    const bars = dataSource.bars.map((bar: any, index: number) => {
+    const bars = dataSource.bars.map((bar: BarElement, index: number) => {
       const { title, color } = bar;
       return (
         <Bar
