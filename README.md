@@ -1,6 +1,6 @@
 # Cowlde-charts
 
-cowlde-charts é uma biblioteca de gráficos construída utilizando React e Recharts.
+Cowlde-charts é uma biblioteca de gráficos construída utilizando React e Recharts.
 
 ![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)

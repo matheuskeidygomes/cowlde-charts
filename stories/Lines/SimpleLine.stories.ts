@@ -1,20 +1,29 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SimpleBarChart from ".";
+import SimpleLineChart from "../../src/components/Lines/SimpleLine";
 
 const meta = {
-  title: "API/Bars/Simple Bar",
-  component: SimpleBarChart,
+  title: "API/Lines/Simple Line",
+  component: SimpleLineChart,
   argTypes: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof SimpleBarChart>;
+} satisfies Meta<typeof SimpleLineChart>;
 
 type Story = StoryObj<typeof meta>;
 
 const dataSource = {
-  bars: [
-    { title: "uv", color: "#8884d8" },
-    { title: "pv", color: "#82ca9d" },
-    { title: "amt", color: "#ffc658" },
+  lines: [
+    {
+      title: "uv",
+      color: "#8884d8",
+      dashed: { active: true, stroke: "3 3" },
+      type: "linear",
+    },
+    {
+      title: "pv",
+      color: "#82ca9d",
+      dashed: { active: false, stroke: "" },
+      type: "monotone",
+    },
   ],
   data: [
     {
@@ -35,12 +44,6 @@ const dataSource = {
       pv: 9800,
       amt: 2290,
     },
-    {
-      title: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
   ],
 };
 
@@ -50,7 +53,6 @@ export const Example: Story = {
     height: 300,
     dataSource,
     dashGrid: "3 3",
-    barSize: 20,
     onClick: (details: any) => console.log(details),
   },
 };

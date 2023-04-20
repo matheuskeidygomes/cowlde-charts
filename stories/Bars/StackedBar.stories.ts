@@ -1,60 +1,42 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import StackedAreaChart from ".";
+import StackedBarChart from "../../src/components/Bars/StackedBar";
 
 const meta = {
-  title: "API/Areas/Stacked Area",
-  component: StackedAreaChart,
+  title: "API/Bars/Stacked Bar",
+  component: StackedBarChart,
   argTypes: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof StackedAreaChart>;
+} satisfies Meta<typeof StackedBarChart>;
 
 type Story = StoryObj<typeof meta>;
 
 const dataSource = {
-  areas: [
-    {
-      title: "uv",
-      color: "#8884d8",
-      type: "monotone",
-      opacity: 0.7,
-      stackId: "a",
-    },
-    {
-      title: "pv",
-      color: "#82ca9d",
-      type: "monotone",
-      opacity: 0.7,
-      stackId: "a",
-    },
-    {
-      title: "amt",
-      color: "#ffc658",
-      type: "monotone",
-      opacity: 0.7,
-      stackId: "a",
-    },
+  bars: [
+    { title: "uv", color: "#8884d8", stackId: "a" },
+    { title: "pv", color: "#82ca9d", stackId: "a" },
+    { title: "amt", color: "#ffc658", stackId: "b" },
   ],
   data: [
     {
-      name: "Page A",
+      title: "Page A",
       uv: 4000,
       pv: 2400,
       amt: 2400,
     },
     {
-      name: "Page B",
+      title: "Page B",
       uv: 3000,
       pv: 1398,
       amt: 2210,
     },
     {
-      name: "Page C",
+      title: "Page C",
       uv: 2000,
       pv: 9800,
       amt: 2290,
     },
     {
-      name: "Page D",
+      title: "Page D",
       uv: 2780,
       pv: 3908,
       amt: 2000,
@@ -68,6 +50,7 @@ export const Example: Story = {
     height: 300,
     dataSource,
     dashGrid: "3 3",
+    barSize: 20,
     onClick: (details: any) => console.log(details),
   },
 };

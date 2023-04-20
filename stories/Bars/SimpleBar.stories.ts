@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import PositiveNegativeBarChart from ".";
+import SimpleBarChart from "../../src/components/Bars/SimpleBar";
 
 const meta = {
-  title: "API/Bars/Positive and Negative Bar",
-  component: PositiveNegativeBarChart,
+  title: "API/Bars/Simple Bar",
+  component: SimpleBarChart,
   argTypes: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof PositiveNegativeBarChart>;
+} satisfies Meta<typeof SimpleBarChart>;
 
 type Story = StoryObj<typeof meta>;
 
@@ -25,14 +25,14 @@ const dataSource = {
     },
     {
       title: "Page B",
-      uv: -3000,
+      uv: 3000,
       pv: 1398,
       amt: 2210,
     },
     {
       title: "Page C",
-      uv: -2000,
-      pv: -9800,
+      uv: 2000,
+      pv: 9800,
       amt: 2290,
     },
     {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BiaxialBarChart from ".";
+import BiaxialBarChart from "../../src/components/Bars/BiaxialBar";
 
 const meta = {
   title: "API/Bars/Biaxial Bar",

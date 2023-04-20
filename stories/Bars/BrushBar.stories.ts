@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BrushBarChart from ".";
+import BrushBarChart from "../../src/components/Bars/BrushBar";
 
 const meta = {
   title: "API/Bars/Brush Bar",

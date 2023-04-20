@@ -1,29 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SimpleLineChart from ".";
+import PositiveNegativeBarChart from "../../src/components/Bars/PositiveNegativeBar";
 
 const meta = {
-  title: "API/Lines/Simple Line",
-  component: SimpleLineChart,
+  title: "API/Bars/Positive and Negative Bar",
+  component: PositiveNegativeBarChart,
   argTypes: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof SimpleLineChart>;
+} satisfies Meta<typeof PositiveNegativeBarChart>;
 
 type Story = StoryObj<typeof meta>;
 
 const dataSource = {
-  lines: [
-    {
-      title: "uv",
-      color: "#8884d8",
-      dashed: { active: true, stroke: "3 3" },
-      type: "linear",
-    },
-    {
-      title: "pv",
-      color: "#82ca9d",
-      dashed: { active: false, stroke: "" },
-      type: "monotone",
-    },
+  bars: [
+    { title: "uv", color: "#8884d8" },
+    { title: "pv", color: "#82ca9d" },
+    { title: "amt", color: "#ffc658" },
   ],
   data: [
     {
@@ -34,15 +25,21 @@ const dataSource = {
     },
     {
       title: "Page B",
-      uv: 3000,
+      uv: -3000,
       pv: 1398,
       amt: 2210,
     },
     {
       title: "Page C",
-      uv: 2000,
-      pv: 9800,
+      uv: -2000,
+      pv: -9800,
       amt: 2290,
+    },
+    {
+      title: "Page D",
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
     },
   ],
 };
@@ -53,6 +50,7 @@ export const Example: Story = {
     height: 300,
     dataSource,
     dashGrid: "3 3",
+    barSize: 20,
     onClick: (details: any) => console.log(details),
   },
 };

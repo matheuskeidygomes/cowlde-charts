@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import StackedBarChart from ".";
+import SimpleAreaChart from "../../src/components/Areas/SimpleArea";
 
 const meta = {
-  title: "API/Bars/Stacked Bar",
-  component: StackedBarChart,
+  title: "API/Areas/Simple Area",
+  component: SimpleAreaChart,
   argTypes: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof StackedBarChart>;
+} satisfies Meta<typeof SimpleAreaChart>;
 
 type Story = StoryObj<typeof meta>;
 
 const dataSource = {
-  bars: [
-    { title: "uv", color: "#8884d8", stackId: "a" },
-    { title: "pv", color: "#82ca9d", stackId: "a" },
-    { title: "amt", color: "#ffc658", stackId: "b" },
+  areas: [
+    { title: "uv", color: "#8884d8", type: "monotone", opacity: 0.7 },
+    { title: "pv", color: "#82ca9d", type: "linear", opacity: 0.7 },
+    { title: "amt", color: "#ffc658", type: "monotone", opacity: 0.7 },
   ],
   data: [
     {
@@ -50,7 +50,6 @@ export const Example: Story = {
     height: 300,
     dataSource,
     dashGrid: "3 3",
-    barSize: 20,
     onClick: (details: any) => console.log(details),
   },
 };

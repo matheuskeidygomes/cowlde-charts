@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import LineBarAreaHorizontalChart from ".";
+import LineBarAreaChart from "../../src/components/Composed/LineBarArea";
 
 const meta = {
-  title: "API/Composed/Line Bar Area Horizontal",
-  component: LineBarAreaHorizontalChart,
+  title: "API/Composed/Line Bar Area",
+  component: LineBarAreaChart,
   argTypes: {},
   tags: ["autodocs"],
-} satisfies Meta<typeof LineBarAreaHorizontalChart>;
+} satisfies Meta<typeof LineBarAreaChart>;
 
 type Story = StoryObj<typeof meta>;
 

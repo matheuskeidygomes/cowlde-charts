@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import StackedPositiveNegativeBarChart from ".";
+import StackedPositiveNegativeBarChart from "../../src/components/Bars/StackedPositiveNegativeBar";
 
 const meta = {
   title: "API/Bars/Stacked Positive and Negative Bar",
