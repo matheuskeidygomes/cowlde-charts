@@ -13,10 +13,6 @@ Rodar no terminal dentro do diretório raiz da aplicação o seguinte comando:
 
 $ npm i cowlde-charts
 
-ou
-
-$ yarn add cowlde-charts
-
 ```
 
 # Exemplos
