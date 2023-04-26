@@ -1,6 +1,6 @@
 {
   "name": "cowlde-charts",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -29,6 +29,7 @@
     "@types/node": "^16.18.23",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
+    "cypress": "^12.10.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -49,7 +50,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-    "fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix"
+    "fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "cypress": "cypress open"
   },
   "eslintConfig": {
     "extends": [

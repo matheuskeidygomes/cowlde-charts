@@ -40,8 +40,7 @@ export type DataSourceElement = {
     | BarElement[]
     | PieElement[]
     | ComposedBarElement[]
-    | AreaElement[]
-    | DataElement[];
+    | AreaElement[];
 };
 
 export type DataElement = {

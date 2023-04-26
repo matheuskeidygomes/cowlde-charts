@@ -15,6 +15,30 @@ $ npm i cowlde-charts
 
 ```
 
+# Storybook
+
+Para acessar o storybook para testes de componentes e acesso a documentação, rodar no diretório raiz do repositório o seguinte comando:
+
+```bash
+
+$ npm run storybook
+
+# Irá rodar em: http://localhost:6006
+
+```
+
+# Cypress Tests
+
+Para verificar os testes E2E ou unitários da biblioteca com cypress, rodar no diretório raiz do repositório o comando:
+
+```bash
+
+$ npm run cypress
+
+```
+
+Após inicializar o cypress, escoher qual tipo de testes quer realizar (E2E ou unitário). 
+
 # Exemplos
 
 ## Line Charts
@@ -48,19 +72,16 @@ const dataSource = {
       title: "Page A",
       uv: 4000,
       pv: 2400,
-      amt: 2400,
     },
     {
       title: "Page B",
       uv: 3000,
       pv: 1398,
-      amt: 2210,
     },
     {
       title: "Page C",
       uv: 2000,
       pv: 9800,
-      amt: 2290,
     },
   ],
 };
@@ -68,11 +89,11 @@ const dataSource = {
 # Chart Component
 
 <SimpleLineChart
-    width: "100%"
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    onClick={(details: any) => console.log(details)}
 />
 ```
 
@@ -144,11 +165,11 @@ const dataSource = {
 # Chart Component
 
 <SimpleAreaChart
-    width: "100%"
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    onClick={(details: any) => console.log(details)}
 />
 ```
 
@@ -217,11 +238,11 @@ const dataSource = {
 # Chart Component
 
 <StackedAreaChart
-    width: "100%"
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    onClick={(details: any) => console.log(details)}
 />
 ```
 
@@ -273,11 +294,11 @@ const dataSource = {
 # Chart Component
 
 <SimplePieChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    outerRadius: 80,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    onClick={(details: any) => console.log(details)}
+    outerRadius={80}, 
 />
 ```
 
@@ -333,12 +354,12 @@ const dataSource = {
 # Chart Component
 
 <ActiveLabelPieChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    outerRadius: 80, 
-    innerRadius: 60,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    onClick={(details: any) => console.log(details)}
+    outerRadius={80}, 
+    innerRadius={60},
 />
 ```
 
@@ -418,12 +439,12 @@ const dataSource = {
 # Chart Component
 
 <SimpleBarChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    barsize: 20,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    barSize={20}
+    onClick={(details: any) => console.log(details)}
 />
 ```
 
@@ -496,12 +517,12 @@ const dataSource = {
 # Chart Component
 
 <StackedBarChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    barsize: 20,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    barSize={20}
+    onClick={(details: any) => console.log(details)}
 />
 ```
 #### Propriedades
@@ -573,12 +594,12 @@ const dataSource = {
 # Chart Component
 
 <PositiveNegativeBarChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    barsize: 20,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    barSize={20}
+    onClick={(details: any) => console.log(details)}
 />
 ```
 
@@ -638,41 +659,21 @@ const dataSource = {
     { title: "18", uv: -125, pv: 653 },
     { title: "19", uv: 222, pv: 366 },
     { title: "20", uv: 372, pv: 486 },
-    { title: "21", uv: 182, pv: 512 },
-    { title: "22", uv: 164, pv: 302 },
-    { title: "23", uv: 316, pv: 425 },
-    { title: "24", uv: 131, pv: 467 },
-    { title: "25", uv: 291, pv: -190 },
-    { title: "26", uv: -47, pv: 194 },
-    { title: "27", uv: -415, pv: 371 },
-    { title: "28", uv: -182, pv: 376 },
-    { title: "29", uv: -93, pv: 295 },
-    { title: "30", uv: -99, pv: 322 },
-    { title: "31", uv: -52, pv: 246 },
-    { title: "32", uv: 154, pv: 33 },
-    { title: "33", uv: 205, pv: 354 },
-    { title: "34", uv: 70, pv: 258 },
-    { title: "35", uv: -25, pv: 359 },
-    { title: "36", uv: -59, pv: 192 },
-    { title: "37", uv: -63, pv: 464 },
-    { title: "38", uv: -91, pv: -2 },
-    { title: "39", uv: -66, pv: 154 },
-    { title: "40", uv: -50, pv: 186 },
   ],
 };
 
 # Chart Component
 
 <BrushBarChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    brushFilter: "title",
-    brushColor: "#8884d8",
-    brushHeight: 30,
-    barSize: 20,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    barSize={20}
+    onClick={(details: any) => console.log(details)}
+    brushFilter="title"
+    brushColor="#8884d8"
+    brushHeight={30}
 />
 ```
 
@@ -772,12 +773,12 @@ const dataSource = {
 # Chart Component
 
 <StackedPositiveNegativeBarChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    barSize: 20,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    barSize={20}
+    onClick={(details: any) => console.log(details)}
 />
 ```
 
@@ -844,13 +845,14 @@ const dataSource = {
 # Chart Component
 
 <BiaxialBarChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    leftAxisColor: "#8884d8",
-    rightAxisColor: "#82ca9d",
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    barSize={20}
+    onClick={(details: any) => console.log(details)}
+    leftAxisColor="#8884d8"
+    rightAxisColor="#82ca9d"
 />
 ```
 
@@ -928,12 +930,12 @@ const dataSource = {
 # Chart Component
 
 <LineBarAreaChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    barSize: 20,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    barSize={20}
+    onClick={(details: any) => console.log(details)}
 />
 ```
 
@@ -1009,12 +1011,12 @@ const dataSource = {
 # Chart Component
 
 <LineBarAreaHorizontalChart
-    width: "100%",
-    height: 300,
-    dataSource,
-    dashGrid: "3 3",
-    barSize: 20,
-    onClick: (details: any) => console.log(details),
+    width="100%"
+    height={300}
+    dataSource={dataSource}
+    dashGrid="3 3"
+    barSize={20}
+    onClick={(details: any) => console.log(details)}
 />
 ```
 
@@ -1038,14 +1040,3 @@ Configura o tamanho das barras.
 ##### onClick: Function 
 Função de click do gráfico. Esta função receberá o valor referente ao ponto clicado no gráfico.
 
-# Storybook
-
-Para acessar o storybook para testes de componentes e acesso a documentação, rodar no diretório raiz do repositório o seguinte comando:
-
-```bash
-
-$ npm run storybook
-
-# Irá rodar em: http://localhost:6006
-
-```
