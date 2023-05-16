@@ -48,7 +48,7 @@ Após inicializar o cypress, escoher qual tipo de testes quer realizar (E2E ou u
 <img src="https://user-images.githubusercontent.com/74063350/232964170-624dd01e-d899-4d11-a1d6-26d721dc306e.png" align="center">
 
 ```bash
-import { SimpleLineChart } from "emaki-charts";
+import { SimpleLineChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -124,7 +124,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { SimpleAreaChart } from "emaki-charts";
+import { SimpleAreaChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -197,7 +197,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { StackedAreaChart } from "emaki-charts";
+import { StackedAreaChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -272,7 +272,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { SimplePieChart } from "emaki-charts";
+import { SimplePieChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -332,7 +332,7 @@ Configura o raio externo do círculo.
 </p>
 
 ```bash
-import { ActiveLabelPieChart } from "emaki-charts";
+import { ActiveLabelPieChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -398,7 +398,7 @@ Configura o raio interno do círculo.
 </p>
 
 ```bash
-import { SimpleBarChart } from "emaki-charts";
+import { SimpleBarChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -476,7 +476,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { StackedBarChart } from "emaki-charts";
+import { StackedBarChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -553,7 +553,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { PositiveNegativeBarChart } from "emaki-charts";
+import { PositiveNegativeBarChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -630,7 +630,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { BrushBarChart } from "emaki-charts";
+import { BrushBarChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -713,7 +713,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { StackedPositiveNegativeBarChart } from "emaki-charts";
+import { StackedPositiveNegativeBarChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -809,7 +809,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { BiaxialBarChart } from "emaki-charts";
+import { BiaxialBarChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -891,7 +891,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { LineBarAreaChart } from "emaki-charts";
+import { LineBarAreaChart } from "cowlde-charts";
 
 # Data Source Object
 
@@ -966,7 +966,7 @@ Função de click do gráfico. Esta função receberá o valor referente ao pont
 </p>
 
 ```bash
-import { LineBarAreaHorizontalChart } from "emaki-charts";
+import { LineBarAreaHorizontalChart } from "cowlde-charts";
 
 # Data Source Object
 
